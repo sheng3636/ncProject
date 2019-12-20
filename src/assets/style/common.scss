@@ -1,0 +1,388 @@
+@charset "utf-8";
+@import 'mixin.scss';
+body,
+button,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+html,
+img,
+input,
+li,
+ol,
+p,
+textarea,
+ul {
+  padding: 0;
+  margin: 0
+}
+
+body,
+html,
+ul,
+li,
+div,
+p,
+span {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+::-webkit-input-placeholder {
+  color: #fff;
+}
+
+/* 使用webkit内核的浏览器 */
+:-moz-placeholder {
+  color: #fff;
+}
+
+/* Firefox版本4-18 */
+::-moz-placeholder {
+  color: #fff;
+}
+
+/* Firefox版本19+ */
+:-ms-input-placeholder {
+  color: #fff;
+}
+
+/* IE浏览器 */
+li,
+ol,
+ul {
+  list-style: none
+}
+
+i {
+  font-style: inherit
+}
+
+html,
+body {
+  font-family: "Microsoft YaHei", "微软雅黑";
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  background: #fff;
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
+}
+.scroll::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+// 定义滚动条的轨道颜色、内阴影及圆角
+.scroll::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 3px;
+}
+
+//  设置滚动条的样式 
+.scroll {
+  overflow-y: auto;
+}
+
+// 定义滑块颜色、内阴影及圆角
+.scroll::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.5);
+  background-color: rgba(46, 169, 238, 0.5);
+}
+
+.scroll::-webkit-scrollbar-track-piece {
+  background-color: rgba(255, 255, 255, 0.2);
+} 
+
+.clear:after{
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.clear{
+    zoom:1;
+}
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+.back_img{
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+.ellipsis{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.animateBorder {
+  animation:circleRoate 5s infinite linear;
+}
+.pageHtml {
+  width: 100%;
+  height: 100%;
+  background: url('./assets/images/common/bodyBg.png');
+}
+.mainWrap {
+  position: relative;
+  margin: 35px auto 0 auto;
+  @include wh(1890px, 940px);
+  @include fj();
+}
+// 四角边框区域
+.itemArea {
+  position: relative;
+  border: 1px solid #4f7399;
+  box-sizing: border-box;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 50px;
+    display: block;
+    @include wh(162px, 39px);
+    @include bis('./assets/images/common/itemAreaTitleBg.png');
+  }
+
+  .title {
+    position: absolute;
+    top: -20px;
+    left: 50px;
+    display: block;
+    line-height: 39px;
+    font-size: 22px;
+    text-align: center;
+    @include wh(162px, 39px);
+  }
+
+  .icon {
+    position: absolute;
+    display: block;
+    @include wh(22px, 20px);
+  }
+
+  .leftTopIcon {
+    top: -5px;
+    left: -5px;
+    @include bis('./assets/images/common/leftTopIcon.png');
+  }
+
+  .rightTopIcon {
+    top: -5px;
+    right: -5px;
+    @include bis('./assets/images/common/rightTopIcon.png');
+  }
+
+  .leftBottomIcon {
+    bottom: -5px;
+    left: -5px;
+    @include bis('./assets/images/common/leftBottomIcon.png');
+  }
+
+  .rightBottomIcon {
+    bottom: -5px;
+    right: -5px;
+    @include bis('./assets/images/common/rightBottomIcon.png');
+  }
+}
+
+// 转圈动画
+@keyframes circleRoate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+// 上下运动动画
+@keyframes ghostUpdown {
+  from {
+    margin-top: 55px;
+  }
+
+  to {
+    margin-top: 30px;
+  }
+}
+// 路由过渡方式
+.router-fade-enter-active,
+.router-fade-leave-active {
+  transition: opacity 0.2s;
+}
+
+.router-fade-enter,
+.router-fade-leave-active {
+  opacity: 0;
+}
+
+.mapCompany{
+  @include sc(16px, #00ffff);
+  img{
+    // margin-top: -20px;
+  }
+}
+// 地图
+.map_yuan {
+  width: 40px;
+  font-size: 20px;
+  line-height: 40px;
+  border-radius: 50%;
+  border:1px solid #eae608;
+  background: #354f28;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+}
+.amap-info-content {
+  overflow: inherit;
+  background: transparent;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+.amap-info-close {
+  top: -290px;
+  right: 10px;
+  display: none;
+}
+
+.amap-info-sharp {
+  display: none;
+}
+// 公司详情弹窗
+.companyModal {
+  position: relative;
+  padding: 15px 0;
+  width: 456px;
+  border: 1px solid #4f7399;
+  box-sizing: border-box;
+  background-color: rgba(35, 35, 35, .8);
+  z-index: 999;
+  .icon {
+    position: absolute;
+    display: block;
+    @include wh(22px, 20px);
+  }
+
+  .leftTopIcon {
+    top: -5px;
+    left: -5px;
+    @include bis('./assets/images/common/leftTopIcon.png');
+  }
+
+  .rightTopIcon {
+    top: -5px;
+    right: -5px;
+    @include bis('./assets/images/common/rightTopIcon.png');
+  }
+
+  .leftBottomIcon {
+    bottom: -5px;
+    left: -5px;
+    @include bis('./assets/images/common/leftBottomIcon.png');
+  }
+
+  .rightBottomIcon {
+    bottom: -5px;
+    right: -5px;
+    @include bis('./assets/images/common/rightBottomIcon.png');
+  }
+
+  .yuJingTitle {
+    text-align: center;
+    @include sc(20px, #fff);
+    color: #fff;
+  }
+
+  .topArea {
+    margin-top: 10px;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+    @include fj(space-between);
+
+    .category {
+      position: relative;
+      width: 60%;
+
+      .txt {
+        font-size: 18px;
+      }
+
+      .content {
+        padding: 5px 25px;
+      }
+
+      &::before {
+        content: "";
+        width: 1px;
+        height: 100%;
+        position: absolute;
+        top: 0%;
+        right: 0;
+        background-image: linear-gradient(to bottom, rgba(253, 253, 253, 0) 0%, rgba(253, 253, 253, .5) 53%, rgba(253, 253, 253, 0) 100%);
+      }
+    }
+
+    .countWrap {
+      width: 40%;
+      height: 90px;
+      flex-direction: column;
+      align-items: center;
+      @include fj(center);
+      text-align: center;
+      @include fj(space-between);
+
+      .txt {
+        font-size: 18px;
+      }
+
+      .count {
+        font-size: 18px;
+
+        span {
+          @include sc(30px, #ffe037);
+        }
+      }
+    }
+  }
+
+  .title {
+    margin: 5px auto;
+    width: 382px;
+    @include fj(space-between);
+
+    span {
+      @include sc(18px, #00ffff);
+    }
+  }
+
+  .categoryWrap {
+    margin: 0 auto;
+    width: 382px;
+    max-height: 270px;
+
+    li {
+      font-size: 14px;
+
+      span {
+        color: #00ffff;
+      }
+    }
+  }
+}

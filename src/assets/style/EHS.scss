@@ -1,0 +1,192 @@
+@import 'mixin.scss';
+
+.leftSider {
+  .weatherTitle {
+    width: 555px;
+    font-weight: normal;
+    text-align: center;
+    @include sc(30px, #fff);
+  }
+
+  .weatherWrap {
+    margin: 20px auto 50px auto;
+    width: 455px;
+    background: rgba(255, 255, 0, 0.07);
+    box-shadow: 0 0 10px rgba(255, 246, 0, 0.2) inset;
+    @include fj();
+
+    li {
+      text-align: center;
+      flex-direction: column;
+      align-items: center;
+      @include fj(center);
+      @include sc(20px, #fff);
+      @include wh(33.3%, 136px);
+
+      p {
+        &.temperature {
+          @include sc(35px, #ffdb1a);
+        }
+      }
+    }
+  }
+}
+
+.zhengShuWrap {
+  &::before {
+    @include wh(253px, 41px);
+    @include bis('../../assets/images/common/itemAreaTitleBg1.png');
+  }
+
+  .title {
+    position: absolute;
+    top: -20px;
+    left: 50px;
+    display: block;
+    line-height: 39px;
+    font-size: 22px;
+    text-align: center;
+    @include wh(253px, 39px);
+  }
+}
+
+.pingGuWrap {
+  margin: 50px auto 20px auto;
+  width: 459px;
+
+  li {
+    margin-bottom: 10px;
+    line-height: 60px;
+    text-align: center;
+    font-size: 18px;
+    background: rgba(0, 144, 255, 0.1) url(../../assets/images/EHS/goodImg.png) no-repeat 60px center;
+    box-shadow: 0 0 10px rgba(0, 234, 255, 0.2) inset;
+    @include wh(459px, 60px);
+  }
+}
+
+.zhengShuWrap {
+  margin-top: 40px;
+  height: 300px;
+
+  .imgWrap {
+    margin-top: 50px;
+    align-items: center;
+    @include fj();
+
+    li {
+      width: 50%;
+      text-align: center;
+
+      img {
+        display: block;
+        margin: 0 auto 10px auto;
+        @include sc(16px, #fff);
+        @include wh(127px, 190px);
+      }
+    }
+  }
+}
+
+// 中间区域
+.centerWrap {
+  width: 728px;
+
+  .bzhTitle {
+    margin-bottom: 50px;
+    font-weight: bold;
+    text-align: center;
+    @include sc(48px, #26d347);
+  }
+
+  .bzhWrap {
+    margin: 0 auto;
+    width: 584px;
+
+    li {
+      margin-bottom: 25px;
+      line-height: 80px;
+      @include wh(584px, 80px);
+      @include sc(24px, #fff);
+      @include bis('../../assets/images/EHS/bzhBg.png');
+      @include fj(flex-start);
+
+      span {
+        @include sc(24px, #26d347);
+        display: block;
+        margin-right: 30px;
+        text-align: center;
+        line-height: 80px;
+        @include wh(80px, 80px);
+      }
+    }
+  }
+
+  .goInWrap {
+    margin-top: 120px;
+    padding: 50px 20px 25px 20px;
+    box-sizing: border-box;
+    background: url(../../assets/images/EHS/anQuanMao.png) no-repeat 515px center;
+
+    .xuZhilist {
+      @include sc(16px, #fff);
+
+      li {
+        line-height: 28px;
+      }
+    }
+  }
+}
+
+// 右边侧栏
+.rightSider {
+  width: 555px;
+
+  .WorkDay {
+    font-weight: normal;
+    text-align: center;
+    @include sc(30px, #fff);
+  }
+
+  .daysCount {
+    margin: 10px 0 50px 0;
+    text-align: center;
+    @include sc(30px, #fff);
+
+    span {
+      margin: 0 10px;
+      @include sc(40px, #ffdb1a);
+    }
+  }
+
+  .sign {
+    .signItem {
+      margin: 50px auto 30px auto;
+      width: 459px;
+
+      li {
+        font-size: 18px;
+        padding: 0 20px;
+        height: 60px;
+        line-height: 60px;
+        margin-bottom: 12px;
+        background: rgba(0, 144, 255, 0.1);
+        -webkit-box-shadow: 0 0 10px rgba(0, 234, 255, 0.2) inset;
+        box-shadow: 0 0 10px rgba(0, 234, 255, 0.2) inset;
+        @include fj(space-between);
+
+        span {
+          &:nth-child(2) {
+            color: #1cd7ff;
+          }
+        }
+      }
+    }
+  }
+
+  .warning {
+    margin-top: 48px;
+    height: 301px;
+    background: url(../../assets/images/EHS/warning.png) no-repeat center;
+  }
+}

@@ -1,0 +1,35 @@
+@import './mixin.scss';
+.businessWrap {
+  .title {
+    position: absolute;
+    top: 25px;
+    left: 700px;
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    span {
+      margin: 0 5px;
+      font-size: 40px;
+      font-weight: bold;
+      color: #ffdb1a;
+    }
+  }
+  .echartsWrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+    #businessArea,
+    #businessArea1 {
+      width: 450px;
+      height: 370px;
+    }
+    #businessArea2 {
+      height: 240px;
+    }
+  }
+  #siChuanMap {
+    width: 1200px;
+    height: 100%;
+  }
+}

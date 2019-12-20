@@ -1,0 +1,204 @@
+@import 'mixin.scss';
+.overviewWrap {
+  @include bis('../../assets/images/overview/overviewBg.png');
+  .peopleYJ {
+    position: absolute;
+    top: 85px;
+    left: 30px;
+    @include wh(460px, 225px);
+    .inner{
+      position: relative;
+      padding-top: 40px;
+      @include wh(100%, 100%);
+      @include bis('../../assets/images/overview/nc_79.png');
+      &::before{
+        content: '在岗人员统计';
+        display: block;
+        position: absolute;
+        top: -20px;
+        left: 50px;
+        line-height: 41px;
+        text-align: center;
+        @include sc(23px,#fff);
+        @include wh(192px, 41px);
+        @include bis('../../assets/images/overview/nc_39.png');
+      }
+      .row{
+        margin: 0 auto;
+        width: 360px;
+        line-height: 50px;
+        @include fj(space-between);
+        span{
+          &:nth-child(1) {
+            @include sc(24px, #fff);
+          }
+
+          &:nth-child(2) {
+            font-weight: bold;
+            @include sc(36px, #ffe036);
+          }
+        }
+      }
+    }
+  }
+  .countWrap{
+    margin: 20px auto;
+    align-items: center;
+    text-align: center;
+    @include wh(550px,105px);
+    @include fj(space-between);
+
+    li{
+      p{
+        &:nth-child(1) {
+          @include sc(30px, #fff)
+        }
+
+        &:nth-child(2) {
+          font-weight: bold;
+          @include sc(44px, #ffdb1a)
+        }
+      }
+    }
+  }
+  .leftLabel{
+    position: absolute;
+    background: url('../../assets/images/overview/leftLabel.png') no-repeat;
+    background-size: 100%;
+    background-position: right bottom;
+    @include fj(flex-start);
+    @include wh(235px, 60px);
+    .labelContent {
+      align-items: center;
+      @include fj(flex-start);
+      @include wh(205px, 30px);
+      background: rgba(0,0,0,0.4);
+      .txt {
+        display: block;
+        line-height: 35px;
+        @include sc(18px, #00fcff);
+      }
+    }
+  }
+  .leftLabelGreen {
+    background: url('../../assets/images/overview/leftLabel1.png') no-repeat;
+    background-size: 100%;
+    background-position: right bottom;
+  }
+  .leftLabelGreen,
+  .rightLabelGreen {
+    .txt {
+      color: #00ff0c!important;
+    }
+  }
+
+  .leftLabelGreen1 {
+    top: 155px;
+    left: 773px;
+  }
+
+  .leftLabelGreen2 {
+    top: 70px;
+    right: 300px;
+  }
+
+  .leftLabel1 {
+    top: 342px;
+    left: 577px;
+  }
+
+  .leftLabel2 {
+    top: 252px;
+    left: 710px;
+  }
+  .leftLabel3 {
+    top: 225px;
+    left: 870px;
+  }
+
+  .leftLabel4 {
+    top: 159px;
+    left: 1063px;
+  }
+
+  .leftLabel5 {
+    top: 95px;
+    left: 1105px;
+  }
+
+  .leftLabel6 {
+    top: 110px;
+    right: 310px;
+  }
+
+  .leftLabel7 {
+    top: 145px;
+    right: 80px;
+  }
+  .leftLabel8 {
+    bottom: 245px;
+    left: 75px;
+  }
+
+  .rightLabel {
+    position: absolute;
+    background: url('../../assets/images/overview/rightLabel.png') no-repeat;
+    background-size: 100%;
+    background-position: right bottom;
+    @include fj(flex-end);
+    @include wh(235px, 60px);
+
+    .labelContent {
+      align-items: center;
+      @include fj(flex-start);
+      @include wh(205px, 30px);
+      background: rgba(0, 0, 0, 0.4);
+
+      .txt {
+        display: block;
+        line-height: 35px;
+        @include sc(18px, #00fcff);
+      }
+    }
+  }
+  .rightLabelGreen {
+    background: url('../../assets/images/overview/rightLabel1.png') no-repeat;
+    background-size: 100%;
+    background-position: right bottom;
+  }
+
+  .rightLabel1 {
+    top: 195px;
+    right: 190px;
+  }
+
+  .rightLabel2 {
+    top: 305px;
+    right: 500px;
+  }
+
+  .rightLabel3 {
+    top: 498px;
+    right: 418px;
+  }
+
+  .rightLabel4 {
+    top: 395px;
+    right: 320px;
+  }
+
+  .rightLabel5 {
+    top: 580px;
+    right: 500px;
+  }
+
+  .rightLabel6 {
+    top: 670px;
+    right: 625px;
+
+  }
+  .rightLabel7{
+    left: 550px;
+    bottom: 65px;
+  }
+}

@@ -1,0 +1,249 @@
+@import 'mixin.scss';
+.changQuMap {
+  position: relative;
+  @include wh(1375px, 100%);
+  @include bis('../../assets/images/overview/overviewBg.png');
+}
+.leftLabel {
+  position: absolute;
+  cursor: pointer;
+  background: url('../../assets/images/overview/leftLabel.png') no-repeat;
+  background-size: 100%;
+  background-position: right bottom;
+  @include fj(flex-start);
+  @include wh(235px, 60px);
+
+  .labelContent {
+    align-items: center;
+    @include fj(flex-start);
+    @include wh(205px, 30px);
+    background: rgba(0, 0, 0, 0.4);
+
+    .txt {
+      display: block;
+      line-height: 35px;
+      @include sc(20px, #00fcff);
+    }
+  }
+}
+.leftLabelYellow {
+  background: url('../../assets/images/overview/leftLabel2.png') no-repeat;
+  background-size: 100%;
+  background-position: right bottom;
+  .labelContent {
+    .txt {
+      display: block;
+      line-height: 35px;
+      @include sc(20px, yellow);
+    }
+  }
+}
+.leftLabel {
+  top: 150px;
+  right: 125px;
+}
+.leftLabe2{
+    top: 230px;
+    right: 245px;
+}
+// 右边侧栏
+.leftSider{
+  height: 100%;
+  flex-direction: column;
+  @include fj(space-between);
+  .yanQi,
+  .wuShui {
+    position: relative;
+    border: 1px solid #4f7399;
+    box-sizing: border-box;
+    @include wh(456px, 600px);
+  }
+  .wuShui{
+    height: 310px;
+    margin-top: 40px;
+  }
+}
+// 烟气监测、污水监测设备弹窗
+.yanQiModal,
+.wuShuiModal {
+  position: absolute;
+  top: 235px;
+  right: 1000px;
+  border: 1px solid #4f7399;
+  background-color: rgba(35, 35, 35, .8);
+  box-sizing: border-box;
+  .inner {
+    position: relative;
+    padding-bottom: 30px;
+    width: 490px;
+    .closeBtn{
+      position: absolute;
+      top:10px;
+      right: 10px;
+      cursor: pointer;
+      @include sc(20px, #ddd);
+    }
+    .icon {
+      position: absolute;
+      display: block;
+      @include wh(22px, 20px);
+    }
+
+    .leftTopIcon {
+      top: -5px;
+      left: -5px;
+      @include bis('../../assets/images/common/leftTopIcon.png');
+    }
+
+    .rightTopIcon {
+      top: -5px;
+      right: -5px;
+      @include bis('../../assets/images/common/rightTopIcon.png');
+    }
+
+    .leftBottomIcon {
+      bottom: -5px;
+      left: -5px;
+      @include bis('../../assets/images/common/leftBottomIcon.png');
+    }
+
+    .rightBottomIcon {
+      bottom: -5px;
+      right: -5px;
+      @include bis('../../assets/images/common/rightBottomIcon.png');
+    }
+    .title{
+      padding: 20px;
+      text-align: center;
+      @include sc(24px,#fff);
+    }
+    .infoList{
+      margin: 0 auto;
+      width: 95%;
+      flex-wrap: wrap;
+      @include fj(flex-start);
+      li{
+        width: 50%;
+        line-height: 30px;
+        span{
+          float: left;
+          display: block;
+          text-align: center;
+          width: 33.3%;
+          img{
+            margin-right: 3px;
+            vertical-align: middle;
+          }
+          &.count {
+            @include sc(14px, #ffe036);
+          }
+          &.normal{
+            @include sc(14px, #00ff78);
+          }
+        }
+      }
+    }
+  }
+}
+.wuShuiModal{
+  top: 150px;
+  right: 880px;
+}
+// 右侧烟气监测数据
+.rotateWrap{
+  margin: 55px auto;
+  align-items: center;
+  flex-wrap: wrap;
+  @include fj(space-between);
+  li{
+    position: relative;
+    text-align: center;
+    @include wh(33.3%,175px);
+    .innerContent {
+      display: block;
+      width: 75px;
+      height: 65px;
+      margin: 20px auto;
+      flex-direction: column;
+      align-items: center;
+      @include fj(center);
+      span,
+      sub {
+        &:nth-child(1) {
+          font-weight: bold;
+          @include sc(24px, #52c6f3);
+        }
+
+        &:nth-child(2) {
+          @include sc(14px, #52c6f3);
+        }
+      }
+    }
+    .LLImg {
+      background: url(../../assets/images/environmental/nc_29.png) no-repeat center;
+    }
+    .YCImg {
+      background: url(../../assets/images/environmental/nc_30.png) no-repeat center;
+    }
+    .HSLImg {
+      background: url(../../assets/images/environmental/nc_70.png) no-repeat center;
+    }
+
+    .unit {
+      line-height: 30px;
+      @include sc(12px, #fff);
+    }
+
+    .count {
+      margin-top: 25px;
+      line-height: 25px;
+      @include sc(20px, #36ff6a);
+    }
+  }
+  .roate {
+    position: absolute;
+    left: 50%;
+    margin-left: -55px;
+    @include wh(110px, 110px);
+    @include bis('../../assets/images/hone/yanQiBg.png');
+  }
+}
+//右侧污水监测数据
+.chartWrap {
+  position: absolute;
+  @include wh(130px, 130px);
+  .txt{
+    text-align: center;
+    @include sc(14px, #fff);
+  }
+}
+.gTWrap {
+  top: 30px;
+  left: 5px;
+  animation:ghostUpdown 1.5s infinite alternate;
+}
+
+.LLWrap {
+  top: 130px;
+  right: 5px;
+  animation:ghostUpdown 1s infinite alternate;
+}
+.OWrap {
+  top: -20px;
+  right: 5px;
+  animation:ghostUpdown 1.8s infinite alternate;
+}
+
+.aDWrap {
+  @include center();
+  @include wh(170px, 170px);
+  animation:ghostUpdown 1.4s infinite alternate;
+}
+#gtChart,
+#xyChart,
+#llChart {
+  @include wh(130px, 80px);
+}
+#adChart{
+  height: 150PX;
+}

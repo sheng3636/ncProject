@@ -1,0 +1,139 @@
+@import './mixin.scss';
+.logisticsWrap {
+  position: relative;
+  margin: 15px auto 0 auto;
+  @include wh(1890px, 970px);
+  @include fj();
+  #map {
+    @include wh(1390px, 100%);
+  }
+  .leftSide{
+    position: relative;
+    border: 1px solid #4f7399;
+    box-sizing: border-box;
+    @include wh(460px, 100%);
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -20px;
+      left: 50px;
+      display: block;
+      @include wh(162px, 39px);
+      @include bis('../../assets/images/common/itemAreaTitleBg.png');
+    }
+
+    .title {
+      position: absolute;
+      top: -20px;
+      left: 50px;
+      display: block;
+      line-height: 39px;
+      font-size: 22px;
+      text-align: center;
+      @include wh(162px, 39px);
+    }
+    .carCount {
+      margin-top: 60px;
+      align-items: center;
+      @include fj(center);
+      .topRota {
+        position: relative;
+        align-items: center;
+        @include wh(60%, 110px);
+        @include fj(center);
+        .roate {
+          position: absolute;
+          top: 0;
+          left: 50%;
+          margin-left: -55px;
+          @include wh(110px, 110px);
+          @include bis('../../assets/images/hone/yanQiBg.png');
+        }
+      }
+      .topCount {
+        flex-direction: column;
+        align-items: flex-start;
+        @include wh(40%, 110px);
+        @include fj(center);
+        span {
+          &:nth-child(1) {
+            @include sc(30px, #fff)
+          }
+
+          &:nth-child(2) {
+            font-weight: bold;
+            @include sc(40px, #ffe036);
+          }
+        }
+      }
+    }
+    .carDetail {
+      margin: 0 auto;
+      width: 90%;
+      height: 170px;
+      border-bottom: 1px dashed #666;
+      align-items: center;
+      @include fj(space-between);
+      li{
+        width: 49%;
+        height: 90px;
+        text-align: center;
+        &:nth-child(2) {
+          width: 1px;
+          background-image: linear-gradient(to bottom, rgba(253, 253, 253, 0.4), #fdfdfd, rgba(253, 253, 253, 0.4));
+        }
+
+        p {
+          &:nth-child(1) {
+            @include sc(24px, #4ec1f4);
+            span {
+              font-weight: bold;
+              @include sc(40px, #4ec1f4);
+            }
+          }
+
+          &:nth-child(2) {
+            @include sc(24px, #fff);
+          }
+        }
+      }
+    }
+    .carWrap{
+      margin: 25px auto 0 auto;
+      width: 90%;
+      max-height: 570px;
+      .carItem {
+        position: relative;
+        padding: 17px 30px;
+        margin-bottom: 15px;
+        background-color: rgba(0, 144, 255, 0.102);
+        box-shadow: 0 0 15px inset rgba(0, 234, 255, .3);
+        .carNum {
+          margin-bottom: 10px;
+          @include sc(24px, #4ec1f4);
+        }
+        .carInfo{
+          line-height: 25px;
+          @include sc(14px,rgba(255,255,255,0.5));
+        }
+        .carLocation{
+          position: absolute;
+          top: 45%;
+          right: 15px;
+          display: block;
+          height: 31px;
+          box-shadow: 0px -2px 4px 0px rgba(0, 0, 0, 0.19),
+          inset 0px -2px 0px 0px rgba(0, 0, 0, 0.31);
+          border-radius: 5px;
+          color: #fff;
+          font-size: 18px;
+          line-height: 31px;
+          padding: 0 5px;
+          cursor: pointer;
+          text-align: center;
+        }
+      }
+    }
+  }
+}

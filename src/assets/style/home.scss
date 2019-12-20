@@ -1,0 +1,449 @@
+@import 'mixin.scss';
+// 侧边侧栏、右边侧栏
+.mainLeft,
+.mainRight {
+  flex-direction: column;
+  @include wh(456px, 100%);
+  @include fj(space-between);
+}
+.environmental{
+  align-items: center;
+  @include fj(space-around);
+  @include wh(456px, 270px);
+  .warningIcon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    @include wh(59px, 59px);
+    @include bis('../../assets/images/hone/warningIcon.png');
+  }
+
+  .yanQiJC,
+  .wsJCWrap {
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    @include wh(145px, 200px);
+    @include fj(center);
+    .yanQiBg {
+      position: relative;
+      flex-direction: column;
+      align-items: center;
+      @include wh(131px, 131px);
+      @include fj(center);
+      span {
+        margin-top: 5px;
+        @include sc(14px, #21c0ff);
+      }
+      .roate{
+        position: absolute;
+        z-index:1;
+        @include wh(100%, 100%);
+        @include bis('../../assets/images/hone/yanQiBg.png');
+      }
+    }
+    .txt{
+      margin-top: 10px;
+      font-weight: bold;
+      @include sc(30px, #36ff00);
+      &.warning{
+        color: #ffc600;
+      }
+    }
+    #wuShuiJC {
+      @include wh(131px, 131px);
+      @include bis('../../assets/images/hone/fill-border.gif');
+      background-size: 105% 105%;
+      background-position: center;
+    }
+  }
+}
+.storage {
+  @include wh(456px, 301px);
+  .top{
+    @include fj();
+    #storageChart,
+    #landfill {
+      @include wh(53%, 215px);
+    }
+    .storageNumWrap {
+      margin-top: 50px;
+      font-size: 18px;
+      @include wh(47%, 165px);
+      .storeged,
+      .storeging {
+        position: relative;
+        margin-top: 10px;
+        margin-left: 20px;
+        padding-left: 25px;
+        line-height: 25px;
+        @include sc(20px, #5ec1e5);
+        &::before{
+          content: '';
+          position: absolute;
+          top: 3px;
+          left: 0;
+          display: block;
+          background: #5ec1e5;
+          @include wh(20px, 20px)
+        }
+        span {
+          display: block;
+        }
+      }
+
+      .storeging {
+        @include sc(20px, #e8f245);
+        &::before {
+          background: #e8f245;
+        }
+      }
+    }
+  }
+  .bottomBorder {
+    margin-top: 25px;
+    @include wh(100%, 1px);
+    background-image: linear-gradient(to right, rgba(253, 253, 253, 0) 0%, #fdfdfd 53%, rgba(253, 253, 253, 0) 100%);
+    opacity: 0.5;
+  }
+  .storageInfo {
+    line-height: 50px;
+    text-align: center;
+    @include fj();
+    li{
+      width: 33.333%;
+      .color{
+        @include sc(18px, #ffb516)
+      }
+    }
+  }
+}
+.EHSWrap {
+  flex-direction: column;
+  align-items: center;
+  @include fj(center);
+  @include wh(456px, 301px);
+  li{
+    margin-top: 10px;
+    line-height: 25px;
+    align-items: center;
+    @include fj(flex-start);
+    @include wh(380px, 65px);
+    .liLeft {
+      width: 150px;
+      text-align: center;
+      font-weight: bold;
+      .en {
+        @include sc(20px, #00c6ff);
+
+        &.health {
+          color: #36ff00;
+        }
+
+        &.saftey {
+          color: #ffc600;
+        }
+      }
+
+      .zh {
+        @include sc(14px, #fff);
+      }
+    }
+    .liRight {
+      position: relative;
+      background: url('../../assets/images/hone/ehsBg.png') no-repeat right center;
+      background-size: 200px 63px;
+      align-items: center;
+      @include fj(flex-start);
+      @include wh(310px, 63px);
+      img{
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      span{
+        display: block;
+        line-height: 67px;
+        text-align: center;
+        min-width: 63px;
+        font-weight: bold!important;
+        @include sc(22px, #26d347);
+      }
+      p{
+        padding-left: 10px;
+        line-height: 17px;
+      }
+      .safetyMemo {
+        padding: 0 15px;
+        line-height: 17px;
+      }
+    }
+  }
+}
+.safety {
+  flex-direction: column;
+  align-items: center;
+  @include fj(center);
+  @include wh(456px, 301px);
+  .safetyTitle {
+    line-height: 80px;
+    @include sc(30px,#fff);
+  }
+  .safetyDays {
+    line-height: 75px;
+    @include sc(100px, #ffdb1a);
+    span{
+      @include sc(48px,#fff);
+    }
+  }
+  .safetyMemo{
+    width: 255px;
+    span {
+      @include sc(30px, #50bff1);
+    }
+  }
+}
+.report {
+  @include wh(456px, 301px);
+}
+#operate {
+  @include wh(100%,100%);
+}
+
+//中间地图下方底部
+.mapMemo {
+  position: absolute;
+  bottom: 20px;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  width: 900px;
+  z-index: 999;
+  @include fj(space-between);
+
+  .leftMemo {
+    @include sc(20px, #fff);
+
+    img {
+      vertical-align: middle;
+      @include wh(25px, 25px);
+    }
+  }
+
+  .rightTab {
+    @include sc(20px, #fff);
+
+    li {
+      margin-top: 10px;
+      width: 64px;
+      height: 37px;
+      box-shadow: inset 0px 10px 10px 0px rgba(255, 255, 255, 0.15);
+      border: 2px solid #2f80ed;
+      line-height: 34px;
+      text-align: center;
+      border-radius: 8px;
+      cursor: pointer;
+      @include sc(16px, #2670d3);
+
+      &.active {
+        width: 64px;
+        color: #fff;
+        background-color: #2f80ed;
+      }
+    }
+  }
+}
+.map{
+  position: relative;
+  border-radius: 10px;
+  @include wh(960px, 100%);
+  // @include bis('../../assets/images/common/mapBg.png');
+  img{
+    position: absolute;
+  }
+
+  .mapBlue {
+    top: 375px;
+    left: 520px;
+  }
+
+  .mapRed {
+    top: 375px;
+    left: 706px;
+  }
+  .mapYellow {
+    top: 470px;
+    left: 520px;
+  }
+
+  .mapGreen {
+    bottom: 115px;
+    left: 335px;
+  }
+  .labelDiv {
+    position: absolute;
+    line-height: 56px;
+    text-align: center;
+    cursor: pointer;
+  }
+  .labelDivYellow {
+    top: 280px;
+    left: 140px;
+    width: 400px;
+    height: 202px;
+    @include bis('../../assets/images/hone/labelYellow.png');
+
+    .txt {
+      margin-top: 19px;
+      margin-left: 20px;
+      color: #00ffff;
+      @include wh(275px, 56px);
+    }
+  }
+
+  .labelDivBlue {
+    top: 135px;
+    right: 40px;
+    width: 382px;
+    height: 288px;
+    background: url('../../assets/images/hone/labelBlue.png') no-repeat center;
+
+    .txt {
+      float: right;
+      margin-top: 48px;
+      margin-right: 20px;
+      color: #00ffff;
+      @include wh(275px, 56px);
+    }
+  }
+
+  .labelDivRed {
+    top: 405px;
+    right: 4px;
+    width: 296px;
+    height: 139px;
+    background: url('../../assets/images/hone/labelRed.png') no-repeat center;
+
+    .txt {
+      float: right;
+      margin-top: 67px;
+      margin-right: 20px;
+      color: #00ffff;
+      @include wh(275px, 56px);
+    }
+  }
+  .labelDivGreen{
+    bottom: 113px;
+    left: 376px;
+    width: 530px;
+    height: 88px;
+    background: url('../../assets/images/hone/labelGreen.png') no-repeat center;
+
+    .txt {
+      float: right;
+      margin-top: 16px;
+      margin-right: 20px;
+      color: #00ffff;
+      width: 323px;
+      height: 52px;
+    }
+  }
+}
+#map .amap-logo,
+#map .amap-copyright {
+  display: none!important;
+}
+.ncMap{
+  position: relative;
+  @include wh(978px, 100%);
+  background: url('../../assets/images/common/ncMap.png') no-repeat center;
+  .inner {
+    position: relative;
+    overflow: hidden;
+    @include wh(100%, 100%);
+    .gevo {
+      position: absolute;
+      bottom: 310px;
+      left: 410px;
+      @include wh(45px, 45px);
+    }
+    .location{
+      position: absolute;
+      bottom: 240px;
+      left: 330px;
+      z-index: 999;
+    }
+    .gif{
+      position: absolute;
+      bottom: -47px;
+      left: 0px;
+      @include wh(100%, 100%);
+    }
+  }
+}
+
+// 环保监测预警记录
+.jianceModal {
+  position: absolute;
+  top: 96px;
+  left: 490px;
+  width: 456px;
+  border: 1px solid #4f7399;
+  box-sizing: border-box;
+  background-color: rgba(35, 35, 35, .8);
+  z-index: 999;
+
+  .inner {
+    position: relative;
+    padding-top: 15px;
+    @include wh(455px, 140px);
+
+    .icon {
+      position: absolute;
+      display: block;
+      @include wh(22px, 20px);
+    }
+
+    .leftTopIcon {
+      top: -5px;
+      left: -5px;
+      @include bis('../../assets/images/common/leftTopIcon.png');
+    }
+
+    .rightTopIcon {
+      top: -5px;
+      right: -5px;
+      @include bis('../../assets/images/common/rightTopIcon.png');
+    }
+
+    .leftBottomIcon {
+      bottom: -5px;
+      left: -5px;
+      @include bis('../../assets/images/common/leftBottomIcon.png');
+    }
+
+    .rightBottomIcon {
+      bottom: -5px;
+      right: -5px;
+      @include bis('../../assets/images/common/rightBottomIcon.png');
+    }
+
+    .colse {
+      position: absolute;
+      top: 5px;
+      right: 10px;
+      @include sc(20px, #ddd);
+      cursor: pointer;
+    }
+
+    .yuJingTitle {
+      text-align: center;
+      @include sc(20px, #fff);
+    }
+
+    .noData {
+      margin-left: 25px;
+      margin-top: 10px;
+    }
+  }
+}

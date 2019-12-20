@@ -1,0 +1,374 @@
+@import 'mixin.scss';
+.EHSTab {
+  position: absolute;
+  top: 60px;
+  right: 50px;
+  font-size: 16px;
+  @include fj(space-between);
+  li{
+    margin-right: 15px;
+    cursor: pointer;
+    &.active{
+      color: #eddd12;
+    }
+  }
+}
+.fenShao,
+.guHua,
+.wuHua,
+.feiYou,
+.tianMai {
+  align-items: center;
+  @include fj(center);
+  @include wh(100%, 100%);
+  .technologyBg {
+    @include wh(1780px,885px);
+  }
+}
+.feiYou {
+  align-items: center;
+  @include fj(center);
+  .swiper-container {
+    @include wh(1780px!important, 745px);
+    .swiper-wrapper {
+      img {
+        @include wh(100% !important, 100%);
+      }
+    }
+  }
+}
+.tianMai{
+  justify-content: space-between;
+
+  .tianMaiArea {
+    position: relative;
+    align-items: center;
+    @include fj(center);
+    @include wh(1390px, 100%);
+
+    &::before {
+      @include wh(253px, 39px);
+      @include bis('../../assets/images/common/itemAreaTitleBg1.png');
+    }
+
+    .title {
+      @include wh(253px, 39px);
+    }
+  }
+}
+.imgWrap {
+  position: relative;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  background: rgba(83, 147, 201, 0.1) url(../../assets/images/technology/nc_74.png) no-repeat center;
+  background-size: 70%;
+  @include wh(1135px, 820px);
+  .kuTitle{
+    padding: 30px 35px;
+    @include sc(30px, #00f6ff);
+    img{
+      vertical-align: middle;
+    }
+  }
+  .tianMaiClass {
+    position: absolute;
+    bottom: 50px;
+    width: 100%;
+    @include fj(center);
+    li{
+      padding: 0 10px;
+      margin-right: 15px;
+      line-height: 25px;
+      border-radius: 5px;
+      font-size: 16px;
+      background-color: rgba(0, 252, 255, .2);
+      border: solid 1px #00fcff;
+      text-align: center;
+      text-align: center;
+    }
+  }
+}
+.countWrap{
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background: rgba(83, 147, 201, 0.2);
+  flex-direction: column;
+  align-items: center;
+  @include fj(center);
+  @include wh(190px, 820px);
+  .tianMaiCount {
+    margin-bottom: 35px;
+    width: 150px;
+    p {
+      &:nth-child(1) {
+        margin-bottom: 10px;
+        @include sc(20px, #fff);
+      }
+
+      &:nth-child(2) {
+        text-align: right;
+        @include sc(24px, #fff);
+        b {
+          @include sc(30px, #ffdb1a);
+        }
+      }
+    }
+  }
+  .specification{
+    margin-bottom: 40px;
+    width: 150px;
+    @include sc(20px, #fff);
+    p {
+      margin-bottom: 10px;
+    }
+    .specificationCount {
+      width: 150px;
+      height: 40px;
+      line-height: 35px;
+      span {
+        display: block;
+        height: 30px;
+        b {
+          @include sc(30px, #ffdb1a);
+        }
+      }
+    }
+  }
+}
+.tianMaiModal{
+  width: 1290px;
+  height: 785px;
+  background: rgba(0, 0, 0, 1);
+  z-index: 999;
+  align-items: center;
+  @include fj(center);
+  @include center();
+  &.itemArea{
+    &::before{
+      background: none;
+    }
+  }
+  .closeTianMai{
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+    @include sc(24px, #808080);
+  }
+  .modalLeft{
+    width: 800px;
+    
+    .kuTitle {
+      padding: 15px 35px;
+      @include sc(30px, #00f6ff);
+
+      img {
+        vertical-align: middle;
+      }
+    }
+    #tianMaiChart{
+      width: 800px;
+      height: 540px;
+    }
+    .tianMaiRow{
+      font-weight: bold;
+      @include sc(24px, #fff);
+
+      &.tianMaiRow1 {
+        @include sc(30px, #ffdb1a);
+      }
+
+      &.tianMaiRow2 {
+        @include sc(30px, #00ccff);
+      }
+    }
+  }
+  .modalRight{
+    width: 360px;
+    .tianMaiItem{
+      padding:20px;
+      background: rgba(0, 144, 255, 0.102);
+      box-shadow: 0 0 15px inset rgba(0, 234, 255, .3);
+      h3{
+        text-align: center;
+        @include sc(24px, #00fffc);
+      }
+      .gradientRow {
+        margin: 10px auto;
+        height: 1px;
+        background-image: linear-gradient(to right, rgba(54, 255, 248, 0) 0%, #36fff8 51%, rgba(54, 255, 248, 0) 100%);
+        opacity: 0.5;
+      }
+    }
+    .tianMaiDetail{
+      margin-bottom: 20px;
+      .tianMaiUl{
+        margin: 0 auto;
+        width: 85%;
+        li{
+          @include sc(20px, rgba(255,255,255,0.5));
+          align-items: center;
+          @include fj(center);
+          span{
+            display: block;
+            line-height: 35px;
+            width: 50%;
+            &:nth-child(2){
+              @include sc(20px, #4bbbf5);
+            }
+          }
+        }
+      }
+    }
+    .tianMaiImpermeable{
+      .imperrmeableUl {
+        width: 308px;
+        border-left: 8px solid rgba(145,157,173,0.45);
+        padding-bottom: 30px;
+        background: url(../../assets/images/technology/nc_001.png) no-repeat right bottom;
+        background-size: 300px 17px;
+        @include sc(12px, #2b1900);
+        li{
+          height: 30px;
+          align-items: center;
+          @include fj(flex-start);
+
+          .progress {
+            position: relative;
+            display: block;
+            @include wh(35px, 100%);
+            &::before {
+              content: '';
+              display: block;
+              height: 100%;
+              border-right: 1px solid #c8c8c8;
+              @include center();
+            }
+            &::after {
+              content: '';
+              display: block;
+              width: 5px;
+              height: 5px;
+              background: #c8c8c8;
+              border-radius: 50%;
+              @include center();
+            }
+          }
+          .txt {
+            display: block;
+            padding-left: 15px;
+            line-height: 20px;
+            background: #ffb03e;
+            @include wh(162px, 20px);
+          }
+
+          .txt1 {
+            width: 174px;
+            background: #3eb9ff;
+          }
+
+          .txt2 {
+            width: 186px;
+            background: #eb6b16;
+          }
+
+          .txt3 {
+            width: 198px;
+            background: #47e5a8;
+          }
+          .txt4 {
+            width: 210px;
+            background: #8b3eff;
+          }
+
+          .txt5 {
+            width: 222px;
+            background: #ffb03e;
+          }
+
+          .txt6 {
+            width: 234px;
+            background: #3eb9ff;
+          }
+
+          .txt7 {
+            width: 246px;
+            background: #eb6b16;
+          }
+
+          .txt8 {
+            width: 258px;
+            background: #b7b7b7;
+          }
+        }
+        
+      }
+    }
+  }
+}
+.statisticArea {
+  padding: 90px 30px 0 30px;
+  @include wh(450px, 100%);
+  .countLine{
+    margin-bottom: 50px;
+    font-weight: bold;
+    align-items: center;
+    @include fj();
+    @include sc(24px, #fff);
+    span{
+      display: block;
+      width: 50%;
+
+      &:nth-child(1) {
+        text-align: center;
+      }
+
+      &:nth-child(2) {
+        text-align: right;
+        b {
+          @include sc(38px, #1cd7ff);
+        }
+      }
+    }
+  }
+  .gradientRow {
+    margin: 70px auto 30px auto;
+    width: 100%;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(253, 253, 253, 0) 0%, #fdfdfd 53%, rgba(253, 253, 253, 0) 100%);
+    opacity: 0.5;
+  }
+  
+  .carDetail {
+    margin: 0 auto;
+    width: 90%;
+    height: 170px;
+    align-items: center;
+    @include fj(space-between);
+    li{
+      width: 49%;
+      height: 90px;
+      text-align: center;
+      &:nth-child(2) {
+        width: 1px;
+        background-image: linear-gradient(to bottom, rgba(255, 224, 54, 0.4), #ffe036, rgba(255, 224, 54, 0.4));
+      }
+
+      p {
+        @include sc(24px, #fff);
+        &:nth-child(1) {
+          b {
+            @include sc(60px, #ffdb1a);
+          }
+        }
+      }
+    }
+  }
+  .videoTxt {
+    margin: 25px auto;
+    @include sc(22px, #1cd7ff);
+  }
+  .videoWrap{
+    @include wh(375px,215px);
+  }
+}

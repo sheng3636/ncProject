@@ -1,0 +1,19 @@
+@import 'mixin.scss';
+.endWrap {
+  height: 205px;
+  flex-direction: column;
+  align-items: center;
+  @include center();
+  @include fj(space-between);
+  p {
+    text-align: center;
+    height: 35px;
+    color: #00ffff;
+    font-size: 105px;
+    letter-spacing: 15px;
+    &:nth-child(2) {
+      font-size: 20px;
+      letter-spacing: 10px;
+    }
+  }
+}
